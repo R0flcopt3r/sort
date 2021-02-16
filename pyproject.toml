@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sort"
+version = "0.1.0"
+description = ""
+authors = ["R0flcopt3r <12752060+R0flcopt3r@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+filterpy = "1.4.5"
+scikit-image = "0.17.2"
+lap = "0.4.0"
+torch = "^1.7.1"
+torchvision = "^0.8.2"
+imageio-ffmpeg = "^0.4.3"
+av = "^8.0.3"
+
+[tool.poetry.dev-dependencies]
+debugpy = "^1.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
