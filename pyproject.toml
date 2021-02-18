@@ -5,7 +5,7 @@ description = ""
 authors = ["R0flcopt3r <12752060+R0flcopt3r@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 filterpy = "1.4.5"
 lap = "0.4.0"
 
