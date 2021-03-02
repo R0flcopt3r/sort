@@ -231,6 +231,8 @@ class Sort(object):
         self.iou_threshold = iou_threshold
         self.trackers = []
         self.frame_count = 0
+        self.false_positives = 0
+        self.miss = 0
 
     def update(self, dets=np.empty((0, 5))):
         """
@@ -257,6 +259,9 @@ class Sort(object):
         matched, unmatched_dets, unmatched_trks = associate_detections_to_trackers(
             dets, trks, self.iou_threshold
         )
+
+        self.false_positives += len(unmatched_trks)
+        self.miss += len(unmatched_dets)
 
         # update matched trackers with assigned detections
         for m in matched:
