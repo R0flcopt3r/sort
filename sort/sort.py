@@ -233,6 +233,7 @@ class Sort(object):
         self.frame_count = 0
         self.false_positives = 0
         self.miss = 0
+        self.matched_per_frame = []
 
     def update(self, dets=np.empty((0, 5))):
         """
@@ -259,6 +260,11 @@ class Sort(object):
         matched, unmatched_dets, unmatched_trks = associate_detections_to_trackers(
             dets, trks, self.iou_threshold
         )
+
+        for m in matched:
+            self.matched_per_frame.append(
+                (self.trackers[m[1]].get_state().flatten(), dets[m[0]])
+            )
 
         self.false_positives += len(unmatched_trks)
         self.miss += len(unmatched_dets)
