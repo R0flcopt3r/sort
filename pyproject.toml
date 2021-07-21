@@ -5,9 +5,9 @@ description = ""
 authors = ["R0flcopt3r <12752060+R0flcopt3r@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = ">=3.8,<3.10"
 filterpy = "1.4.5"
-lap = "0.4.0"
+scipy = "1.7.0"
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.2.1"
